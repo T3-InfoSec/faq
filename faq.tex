@@ -5,6 +5,7 @@
 \usepackage{setspace}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage[normalem]{ulem}
 
 %=== STYLE SETTINGS ===%
 \setstretch{1.2}
@@ -54,16 +55,63 @@ Great Wall is, the first to combine 4 crucial information security properties, n
  \begin{enumerate}
   \item \textbf{Individual, Non-Obscure, Coercion Resistant, but not KBA}: This setup describes solutions that are intensive in physical elements, such as \href{https://iancoleman.io/shamir39/}{sharding your key} and distributing shards accross multiple addresses as well as the elements for physical security of each such address, like physical vaults, surveilance, home defense, alarm, geographic separation, etc. The shortcoming of that approach is the \textbf{astronomically high costs} of setup, maintenance and update. Put simply: `Bitcoin is reduced to a glorified gold'.
   \item \textbf{KBA, Non-Obscure, Coercion Resistant, but not Individual}: This setup describes solutions in which owner depends on services of shared custody. As explained above, that completely negates the foundational premise of Bitcoin. Companies offering said services, are themselves liable to state regulations, judicial subpoenas, and are themselves, additional points of failure. Put simply: `Bitcoin is reduced to a glorified fiat currency';
-  \item \textbf{KBA, Individual, Coercion Resistant, but based on Obscurity}:
-  \item \textbf{KBA, Individual, Non-Obscure, but Coercion Vulnerable}:
+  \item \textbf{KBA, Individual, Coercion Resistant, but based on Obscurity}: This setup consist of relying on a critical secret trick that only works in so far adversary is ignorant about it. Many \href{https://rewindbitcoin.com/}{modern `solutions'} unknowingly have that shortcoming, which fundamentally violates the most widely accepted paradim in protocol design: \href{https://en.wikipedia.org/wiki/Kerckhoffs's_principle}{Kerckhoffs' principle} --- more about that in questions about obscurity. Put simply, it is wishing on your lucky start that the bad guys willing to plan and execute an elaborate and risky endeavor as a kidnapping will just never hear about how your James Bond play works. Don't bet yours Sats (or your life) on that!
+  \item \textbf{KBA, Individual, Non-Obscure, but Coercion Vulnerable}: This is, basically, vanilla self-custody. Having your keys, but not doing anything in particular to defend them against wrench attacks. \href{https://duckduckgo.com/?q=\%22we+are+still+early\%22+bitcoin&t=brave&ia=web}{``We are still early''}, the saying goes. For purposes of going by as a needle in a haystack to avoid being attacked, not so much anymore, and it will only get worse!
  \end{enumerate}
+Combining the aforementioned 4 properties literally means that ``1) it's all in your head; 2) in nobody else's; 3) attackers are aware of that; and 4) they are unable to coerce you into giving up said knowledge.'' By logic, this can only be possible if said knowledge is \href{https://en.wikipedia.org/wiki/Tacit_knowledge}{tacit}. Hence the jargon \textbf{T}acit \textbf{K}nowledge-\textbf{B}ased \textbf{A}uthentication \textbf{TKBA} to the innovation.
+\end{question}
 
+\begin{question}{What exactly does client pay for?}
+Client does \textbf{not} pay for \sout{custody} in any definition. In one sentence: if clients does setup today and company disapears tomorrow, clients still has as much access to their stash as right after setup. The catch is that running the entire process offline, though possible, is typically very inconvenient. For a small price, user can render their UX much more \textbf{convenient}.
 \end{question}
 
 \section{Technical Questions}
 
+\begin{question}{How can user buy improvement in convenience without compromising security properties or true self-custody?}
+\end{question}
+
+\begin{question}{Wouldn't a frustrated / distrusting / uneducated wrench-attacker, then brutalize their victims? How to solve that?}
+\end{question}
+
+\begin{question}{It seems like there is an obvious single point of failure in user forgetting either inputs to their setup. How to fix it?}
+\end{question}
+
+\begin{question}{Is the expected UX, by itself, not too tiresome?}
+\end{question}
+
+\begin{question}{What is so bad about obscurity, really? How to avoid it? Can you provide examples?}
+\end{question}
+
+\begin{question}{Can the system be used for other currencies?}
+\end{question}
 
 \section{Business Model}
+
+\begin{question}{How this UX improvement purchase happen?}
+\end{question}
+
+\begin{question}{How will clients feel about that?}
+\end{question}
+
+\begin{question}{What exactly is the business model?}
+\end{question}
+
+\begin{question}{Is there any first-mover advantage or lock-in mechanism?}
+Absolutely!
+\end{question}
+
+\begin{question}{What are the customer acquisition strategies?}
+\end{question}
+
+\begin{question}{Are payments recurrent?}
+\end{question}
+
+\begin{question}{Are there ways to minimize user churn?}
+\end{question}
+
+\begin{question}{Is there synergy among different revenue streams?}
+\end{question}
+
 
 
 \end{document}
