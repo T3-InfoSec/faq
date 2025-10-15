@@ -27,6 +27,13 @@
   linkcolor=blue!70!black
 }
 
+\newcommand{\obsegg}{https://www.linkedin.com/posts/lugano-plan-b_luganoplanb-bitcoin-activity-7167881837728493568-LEZk/}
+\newcommand{\theproblem}{https://x.com/search?q=jameson\%20lopp\%20wrench\%20attack&src=typed_query&f=live}
+\newcommand{\nocurrentsolution}{https://www.youtube.com/watch?v=MsfR6ZIkzPs&t=2734s}
+\newcommand{\kba}{https://en.wikipedia.org/wiki/Knowledge-based_authentication}
+\newcommand{\kprinciple}{https://en.wikipedia.org/wiki/Kerckhoffs's_principle}
+\newcommand{\privsecplaque}{https://duckduckgo.com/?q=prosegur+verisure+\%22warning+sign\%22+facade\&iar=images\&t=brave\&iaf=type\%3Aphoto}
+
 \begin{document}
 
 \begin{center}
@@ -37,15 +44,15 @@
 \section{General Questions}
 
 \begin{question}{What problem does your startup solve?}
-Great Wall, the protocol, app and startup solve the \href{https://x.com/search?q=jameson\%20lopp\%20wrench\%20attack&src=typed_query&f=live}{terrifyingly rising problem of \textbf{wrench attakcs} on custody of crypto assets}.
+Great Wall, the protocol, app and startup solve the \href{\theproblem}{terrifyingly rising problem of \textbf{wrench attakcs} on custody of crypto assets}.
 \end{question}
 
 \begin{question}{How is your approach different from competitors?}
 Great Wall is, the first to combine 4 crucial information security properties, namely:
   \begin{enumerate}
-    \item \textbf{Devicelessness / Stateless / \href{https://en.wikipedia.org/wiki/Knowledge-based_authentication}{Kowledge-Based Authentication}}: AKA \textbf{KBA}. This refers to the attainment of secret at hand, in our case, the private keys of a wallet, is not depending on any physical object except user's own brain, in contrast to PBA (\textbf{P}ossession-\textbf{B}ased \textbf{A}uthentication). Namely, by having access to a piece of information (the `knowledge', in knowledge-based authentication) that is possible to memorize, user can attain their wallet in any device. There is no particular external device, metal plaque, object, physical address that, user depends on, therefore becoming an additional point of failure;
+    \item \textbf{Devicelessness / Stateless / \href{\kba}{Kowledge-Based Authentication}}: AKA \textbf{KBA}. This refers to the attainment of secret at hand, in our case, the private keys of a wallet, is not depending on any physical object except user's own brain, in contrast to PBA (\textbf{P}ossession-\textbf{B}ased \textbf{A}uthentication). Namely, by having access to a piece of information (the `knowledge', in knowledge-based authentication) that is possible to memorize, user can attain their wallet in any device. There is no particular external device, metal plaque, object, physical address that, user depends on, therefore becoming an additional point of failure;
     \item \textbf{Individual, non-Shared Custody}: This is the foundational premise of Bitcoin. Compromising on that premise negates the core valeu proposal of Bitcoin / crypto. As our saying goes ``be your own bank'' means you don't rely on anybody else or any company for the custody of your assets.
-    \item \textbf{Non-Obscurity}: This is a direct consequence of one of the most widely accepted paradigms in cryptology and protocol design, the \href{https://en.wikipedia.org/wiki/Kerckhoffs's_principle}{Kerckhoffs's principle}. The principle states: `Knowledge inevitably diffuses, so a security system cannot rely on adversaries' ignorance on how it works, but on the secrecy of each instance.'. Put simply: `A good security system is not one based on a secret trick (that one just \textit{hopes} adversaries never get to learn), but on the secrecy of each user's keys'.
+    \item \textbf{Non-Obscurity}: This is a direct consequence of one of the most widely accepted paradigms in cryptology and protocol design, the \href{\kprinciple}{Kerckhoffs's principle}. The principle states: `Knowledge inevitably diffuses, so a security system cannot rely on adversaries' ignorance on how it works, but on the secrecy of each instance.'. Put simply: `A good security system is not one based on a secret trick (that one just \textit{hopes} adversaries never get to learn), but on the secrecy of each user's keys'.
     \item \textbf{Coercion Resistance}: It's the main point: to render attempts of using violence or threats thereof on custodians to compel them to give up their stashes (or any private information whatsoever). Not only that, system has to be such that an attacker cannot even threaten the integrity of the user's stash to try to obtain something else.
   \end{enumerate}
 \end{question}
@@ -67,10 +74,24 @@ Client does \textbf{not} pay for \sout{custody} in any definition. In one senten
 
 \section{Technical Questions}
 
-\begin{question}{How can user buy improvement in convenience without compromising security properties or true self-custody?}
+\begin{question}{How can user decide the duration of their time barrier?}
+Three important concepts are the basis for it:
+\begin{enumerate}
+ \item \textbf{sequences of tasks that cannot be computed in parallel}: Many types of sequential computation have the characteristic adding more machines, don't speed up the process. It's similar to how having 100 marathonists don't allow you to run a marathon in $1/100$ of the time, only in the speed of the fastest runner.
+ \item \textbf{frequency scaling barrier}: 
+ \item \textbf{memory intensivity}:
+\end{enumerate}
+The combination of those three paradigms are widely used in modern technology.
+\end{question}
+
+\begin{question}{How can user buy improvement in convenience without compromising security properties or true self-custody? If I pay for somebody else to derive my keys, then I no longer have individual custody of them, right?}
+User doesn't pay to derive the seed to the private game. Instead, he pays to derive a one-time usage key to decrypt locally stored game.
+...
+As a consequence anonymity of user becomes critically important, which consolidates first-mover lock-in (anonymity is maximized by joining marketplace with largest pool of users).
 \end{question}
 
 \begin{question}{Wouldn't a frustrated / distrusting / uneducated wrench-attacker, then brutalize their victims? How to solve that?}
+Likewise \href{}{private security companies warning signs}, users will want to acquire, use and wear branded merchandise to 
 \end{question}
 
 \begin{question}{It seems like there is an obvious single point of failure in user forgetting either inputs to their setup. How to fix it?}
