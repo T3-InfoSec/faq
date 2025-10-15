@@ -33,6 +33,9 @@
 \newcommand{\kba}{https://en.wikipedia.org/wiki/Knowledge-based_authentication}
 \newcommand{\kprinciple}{https://en.wikipedia.org/wiki/Kerckhoffs's_principle}
 \newcommand{\privsecplaque}{https://duckduckgo.com/?q=prosegur+verisure+\%22warning+sign\%22+facade\&iar=images\&t=brave\&iaf=type\%3Aphoto}
+\newcommand{\mhh}{https://security.stackexchange.com/questions/237498/how-does-memory-hard-hashing-passwords-protect-against-brute-force-attacks\#237511}
+\newcommand{\bipref}{https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki}
+\newcommand{\tlp}{https://en.wikipedia.org/wiki/Time-lock_puzzle}
 
 \begin{document}
 
@@ -63,7 +66,7 @@ Great Wall is, the first to combine 4 crucial information security properties, n
   \item \textbf{Individual, Non-Obscure, Coercion Resistant, but not KBA}: This setup describes solutions that are intensive in physical elements, such as \href{https://iancoleman.io/shamir39/}{sharding your key} and distributing shards accross multiple addresses as well as the elements for physical security of each such address, like physical vaults, surveilance, home defense, alarm, geographic separation, etc. The shortcoming of that approach is the \textbf{astronomically high costs} of setup, maintenance and update. Put simply: `Bitcoin is reduced to a glorified gold'.
   \item \textbf{KBA, Non-Obscure, Coercion Resistant, but not Individual}: This setup describes solutions in which owner depends on services of shared custody. As explained above, that completely negates the foundational premise of Bitcoin. Companies offering said services, are themselves liable to state regulations, judicial subpoenas, and are themselves, additional points of failure. Put simply: `Bitcoin is reduced to a glorified fiat currency';
   \item \textbf{KBA, Individual, Coercion Resistant, but based on Obscurity}: This setup consist of relying on a critical secret trick that only works in so far adversary is ignorant about it. Many \href{https://rewindbitcoin.com/}{modern `solutions'} unknowingly have that shortcoming, which fundamentally violates the most widely accepted paradim in protocol design: \href{https://en.wikipedia.org/wiki/Kerckhoffs's_principle}{Kerckhoffs' principle} --- more about that in questions about obscurity. Put simply, it is wishing on your lucky start that the bad guys willing to plan and execute an elaborate and risky endeavor as a kidnapping will just never hear about how your James Bond play works. Don't bet yours Sats (or your life) on that!
-  \item \textbf{KBA, Individual, Non-Obscure, but Coercion Vulnerable}: This is, basically, vanilla self-custody. Having your keys, but not doing anything in particular to defend them against wrench attacks. \href{https://duckduckgo.com/?q=\%22we+are+still+early\%22+bitcoin&t=brave&ia=web}{``We are still early''}, the saying goes. For purposes of going by as a needle in a haystack to avoid being attacked, not so much anymore, and it will only get worse!
+  \item \textbf{KBA, Individual, Non-Obscure, but Coercion Vulnerable}: This is, basically, vanilla self-custody. Having your keys, but not doing anything in particular to defend them against wrench attacks. \href{https://duckduckgo.com/?q=\%22we+are+still+early\%22+bitcoin&t=brave&ia=web}{``We are still early''}, the saying goes. For purposes of going by as a needle in a haystack to avoid being attacked, not so much anymore, and, as crypto continues to grow in adoption and value, it will only get worse! So don't wait until problem reaches you (it's an \textit{when}, not an \textit{if}) to solve it!
  \end{enumerate}
 Combining the aforementioned 4 properties literally means that ``1) it's all in your head; 2) in nobody else's; 3) attackers are aware of that; and 4) they are unable to coerce you into giving up said knowledge.'' By logic, this can only be possible if said knowledge is \href{https://en.wikipedia.org/wiki/Tacit_knowledge}{tacit}. Hence the jargon \textbf{T}acit \textbf{K}nowledge-\textbf{B}ased \textbf{A}uthentication \textbf{TKBA} to the innovation.
 \end{question}
@@ -74,18 +77,36 @@ Client does \textbf{not} pay for \sout{custody} in any definition. In one senten
 
 \section{Technical Questions}
 
-\begin{question}{How can user decide the duration of their time barrier?}
+\begin{question}{How does the solution work?}
+Likewise BIP39, it's just a key derivation scheme that can run 100\% offline in any device. The simple way to describe the Great Wall protocol is to say:
+\begin{enumerate}
+ \item You input an initial seed equivalent in strength to 6 BIP39 words into an hours-(, days-, or even weeks-) long hash;
+ \item Hash specifies a seed to your `private game', which admits a near-infinity of possible `gameplays';
+ \item Bits of your `private gameplay' of your `private game' are added to entropy of master secret;
+\end{enumerate}
+The catch is that the knowledge of `gameplay' is easy to memorize but impossible to put into words. Because of that, you, alive and well, are strictly throughout the entire process, which can be set up to take hours, days, or even weeks. As a result, stealing your stash becomes at least as difficult as conducting a kidnapping that takes as long.
+\end{question}
+
+\begin{question}{How can user decide the duration of their time barrier? Wouldn't an adversary equiped with a setup 1000-X more powerful than your be able to perform your derivation in 1000-th of the time?}
 Three important concepts are the basis for it:
 \begin{enumerate}
- \item \textbf{sequences of tasks that cannot be computed in parallel}: Many types of sequential computation have the characteristic adding more machines, don't speed up the process. It's similar to how having 100 marathonists don't allow you to run a marathon in $1/100$ of the time, only in the speed of the fastest runner.
- \item \textbf{frequency scaling barrier}: 
- \item \textbf{memory intensivity}:
+ \item \textbf{sequences of tasks that cannot be computed in parallel}: Many types of sequential computation have the characteristic adding more machines, don't speed up the process. It's similar to how having 1000 marathonists don't allow you to run a marathon in $1/1000$ of the time, only in the speed of the fastest runner.
+ \item \textbf{frequency scaling barrier}: continuing the analogy between compuation performance of a sequential task and running a race, the `speed of a runner' is equivalent to the \textit{frequency} of a CPU. For highly technical reasons, since mid 2000's we have reached a \href{https://en.wikipedia.org/wiki/Frequency_scaling}{ceiling on frequency scaling} Said ceiling is very directly consequence of physice --- the speed of light, limiting how fast a signal can travel, or size of atoms limiting how small a transistor can be, hence,cannot be expected to change.
+ \item \textbf{memory intensivity}: continuing the analogy even further, there are known techniques to minimize the material advantage a top performing CPU has over an ordinary one, or in the analogy pro runner has over a casual walker. To have the sequential task at hand be intensive in memory access, would be equivalent to equip both pro runner and casual walker alike with a \href{https://duckduckgo.com/?q=running+parachute&iar=images&t=brave}{running parachute}: the top performer would still outperform the casual one, but way less efficiently.
 \end{enumerate}
-The combination of those three paradigms are widely used in modern technology.
+The combination of those three paradigms are widely used in modern technology. They are at the core of design of \textbf{offline} key derivation functions like that employed in \href{\bipref}{BIP39}, \href{\mhh}{memory-intensive hashes}, and \href{\tlp}{time-lock puzzles}.
+\end{question}
+
+\begin{question}{Wouldn't it be simpler to have the time barrier consist of blockhain block counting?}
+In that case, there would be a necessary piece of information published on the blockchain, therefore invalidating the premise of individual non-shared custody. The entire process has to be possible to do offline.
+\end{question}
+
+\begin{question}{There are current \href{https://rewindbitcoin.com/}{solutions also based on imposing a time-barrier}. Why are they inadequate?}
+The catch is `What exactly happens / becomes possible to be done after the time barrier?'. If the answer is: `transaction from a protected address can be redirected to emergency address before $n$ blocks enlapse', this means the system only works in so far adversary does not know how it works, namely it's an obscure system. The problem with obscurity is that not only, knowledge diffusion undermines a security system, but also it makes it backfire. In that example, an educated attacker has incentive to assassinate wrench attack victim to prevent them from performing transaction redirection. Reliance on obscurity, therefore, introduced the incentive for an educated attacker to worsen their attack --- and obviously, there are no reliable ways to prevent wrench attackers form educating themelves (\href{kprinciple}{Kerckhoffs' principle}).
 \end{question}
 
 \begin{question}{How can user buy improvement in convenience without compromising security properties or true self-custody? If I pay for somebody else to derive my keys, then I no longer have individual custody of them, right?}
-User doesn't pay to derive the seed to the private game. Instead, he pays to derive a one-time usage key to decrypt locally stored game.
+User doesn't pay to derive the seed to the private game. Instead, he pays to derive a one-time usage key to decrypt locally stored game seed.
 ...
 As a consequence anonymity of user becomes critically important, which consolidates first-mover lock-in (anonymity is maximized by joining marketplace with largest pool of users).
 \end{question}
