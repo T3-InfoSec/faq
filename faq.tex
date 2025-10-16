@@ -36,7 +36,7 @@
 \newcommand{\mhh}{https://security.stackexchange.com/questions/237498/how-does-memory-hard-hashing-passwords-protect-against-brute-force-attacks\#237511}
 \newcommand{\bipref}{https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki}
 \newcommand{\tlp}{https://en.wikipedia.org/wiki/Time-lock_puzzle}
-
+\newcommand{\gmaps}{https://blog.google/products/maps/15-years-of-mapping-the-world-makes-search-better/}
 \begin{document}
 
 \begin{center}
@@ -87,6 +87,25 @@ Likewise BIP39, it's just a key derivation scheme that can run 100\% offline in 
 The catch is that the knowledge of `gameplay' is easy to memorize but impossible to put into words. Because of that, you, alive and well, are strictly throughout the entire process, which can be set up to take hours, days, or even weeks. As a result, stealing your stash becomes at least as difficult as conducting a kidnapping that takes as long.
 \end{question}
 
+\begin{question}{What does such \textit{TKBA game} consist of?}
+\href{https://www.youtube.com/watch?v=bI8fiGmpHR0}{\textbf{Zooming in a fractal into a specific object}}. Desired characteristics met by that are:
+\begin{enumerate}
+ \item \textbf{Deterministic:} a fixed math formula with a given input will always yield the same fractal no matter the platform;
+ \item \textbf{Quantifiable:} a simple straightforward calculation ensures the given objects have exact the cryptographic strength needed;
+ \item \textbf{Familiarity and Ease:} everybody is familiar to the UX of zooming in Google from planetary scale into specific addresses. With \href{\gmaps}{~200 M distinct locations in Google maps}, selecting one single location is roughly equivalent to 27 bits, which is north of 2 BIP29 words (11 bits each). That puts memorizing the equivalent strength to a conventional 12-words seedphrase at equivalent to locating 6 addresses: \textbf{easy!};
+ \item \textbf{Tacitness:} Unlike the UX of zooming in to location on planet earth, zooming in into a location in a private fractal, involves using reference points that are all:
+ \begin{enumerate}
+  \item private --- hence not previously known by the adversary;
+  \item unlabeled --- the only way to user can (attempt to) refer to them is by (attempting to) describing them;
+  \item unfamiliar --- yielded purely by math formulas with secret parameters, private reference points' shapes are unlike anything adversaries had seen before
+  \item similar to one another --- reference points differ from one another with very subtle nuances of position, shape, angle and coloring, which makes them \textbf{impossible to describe apart with words};
+ \end{enumerate}
+ \item \textbf{Culturally Neutral:} Also worh mentioning process is not linguistic, or linked to something that might be vary in cultural acceptability accross time and geography. It's purely mathematical, so no cultural barriers to adoption;
+\end{enumerate}
+
+
+\end{question}
+
 \begin{question}{How can user decide the duration of their time barrier? Wouldn't an adversary equiped with a setup 1000-X more powerful than your be able to perform your derivation in 1000-th of the time?}
 Three important concepts are the basis for it:
 \begin{enumerate}
@@ -106,25 +125,27 @@ The catch is `What exactly happens / becomes possible to be done after the time 
 \end{question}
 
 \begin{question}{How can user buy improvement in convenience without compromising security properties or true self-custody? If I pay for somebody else to derive my keys, then I no longer have individual custody of them, right?}
-User doesn't pay to derive the seed to the private game. Instead, he pays to derive a one-time usage key to decrypt locally stored game seed.
+User doesn't pay to derive the seed to the private game. Instead, he pays to derive a one-time usage key to decrypt locally stored game seed. The outsourced material is insufficient to 
 ...
 As a consequence anonymity of user becomes critically important, which consolidates first-mover lock-in (anonymity is maximized by joining marketplace with largest pool of users).
 \end{question}
 
 \begin{question}{Wouldn't a frustrated / distrusting / uneducated wrench-attacker, then brutalize their victims? How to solve that?}
-Likewise \href{}{private security companies warning signs}, users will want to acquire, use and wear branded merchandise to 
+Likewise \href{\privsecplaque}{private security companies warning signs}, users will want to acquire, use and wear branded merchandise to dissuade attackers or would-be attackers. Likewise warning signs, branded merch will educate attackers (and would-be attackers) that victim (and would-be victims) really are well protected.
 \end{question}
 
 \begin{question}{It seems like there is an obvious single point of failure in user forgetting either inputs to their setup. How to fix it?}
 \end{question}
 
 \begin{question}{Is the expected UX, by itself, not too tiresome?}
+We are talking about a half minute game-like UX, automatically notified and replayed on average once a week. Different, but definitely not much to ask considering the benefits.
 \end{question}
 
 \begin{question}{What is so bad about obscurity, really? How to avoid it? Can you provide examples?}
 \end{question}
 
 \begin{question}{Can the system be used for other currencies?}
+Protocol is merely a key derivation scheme. Resulting secret can be converted into any secret user wants to protect against wrench attack. That includes key to any wallet, any digital secret, or singature scheme, password manager, or even physical vaults.
 \end{question}
 
 \section{Business Model}
@@ -136,10 +157,12 @@ Likewise \href{}{private security companies warning signs}, users will want to a
 \end{question}
 
 \begin{question}{What exactly is the business model?}
+Company is a marketplace between anonymous clients of key derivation and providers of key derivation. Clients want to stay anonymous in order not to reveal their window of vulnerability (namely, the span of time in which their time-locked virtual vault is open or close to be opened).
+Another venue is to sell branded merchandise. Likewise \href{\privsecplaque}{warning signs of private security companies}, branded merchandise will educated attackers and would-be attackers that their victims (and would-be victims) really are well protected, and that attempts on wrench attacking them are futile.
 \end{question}
 
 \begin{question}{Is there any first-mover advantage or lock-in mechanism?}
-Absolutely!
+Absolutely! Users want to maximize their anonymity. The more anonymous they are, on buying their key derivation, the less likely it is they are wrench-attacked right upon receiving their keys (which would anull their time barrier). By adhering to first mover, new users make sure they blend in the largest possible pool of other users, therefore maximizing their anonymity. This is similar to having the tendency to choose the largest social network.
 \end{question}
 
 \begin{question}{What are the customer acquisition strategies?}
