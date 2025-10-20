@@ -53,9 +53,9 @@ Great Wall, the protocol, app and startup solve the \href{\theproblem}{terrifyin
 \begin{question}{How is your approach different from competitors?}
 Great Wall is, the first to combine 4 crucial information security properties, namely:
   \begin{enumerate}
-    \item \textbf{Devicelessness / Stateless / \href{\kba}{Kowledge-Based Authentication}}: AKA \textbf{KBA}. This refers to the attainment of secret at hand, in our case, the private keys of a wallet, is not depending on any physical object except user's own brain, in contrast to PBA (\textbf{P}ossession-\textbf{B}ased \textbf{A}uthentication). Namely, by having access to a piece of information (the `knowledge', in knowledge-based authentication) that is possible to memorize, user can attain their wallet in any device. There is no particular external device, metal plaque, object, physical address that, user depends on, therefore becoming an additional point of failure;
-    \item \textbf{Individual, non-Shared Custody}: This is the foundational premise of Bitcoin. Compromising on that premise negates the core valeu proposal of Bitcoin / crypto. As our saying goes ``be your own bank'' means you don't rely on anybody else or any company for the custody of your assets.
-    \item \textbf{Non-Obscurity}: This is a direct consequence of one of the most widely accepted paradigms in cryptology and protocol design, the \href{\kprinciple}{Kerckhoffs's principle}. The principle states: `Knowledge inevitably diffuses, so a security system cannot rely on adversaries' ignorance on how it works, but on the secrecy of each instance.'. Put simply: `A good security system is not one based on a secret trick (that one just \textit{hopes} adversaries never get to learn), but on the secrecy of each user's keys'.
+    \item \textbf{Devicelessness / Stateless / \href{\kba}{Kowledge-Based Authentication}}: aka \textbf{KBA}. This refers to the attainment of secret at hand, in our case, the private keys of a wallet, is not depending on any physical object except user's own brain, in contrast to PBA (\textbf{P}ossession-\textbf{B}ased \textbf{A}uthentication). Namely, by having access to a piece of information (the `knowledge', in knowledge-based authentication) that is possible to memorize, user can access their wallet in any device. There is no particular external device, metal plaque, object, physical address that, user depends on, therefore becoming an additional point of failure;
+    \item \textbf{Individual, non-Shared Custody}: This is the foundational premise of Bitcoin. Compromising on that premise negates the core valeu proposal of Bitcoin / crypto. As our sayings go ``not your keys, not your coins'', and ``be your own bank'' means you don't rely on anybody else or any company for the custody of your assets.
+    \item \textbf{Non-Obscurity}: This is a direct consequence of one of the most widely accepted paradigms in cryptology and protocol design, the \href{\kprinciple}{Kerckhoffs's principle}. The principle states: `Knowledge inevitably diffuses, so a security system cannot rely on adversaries' ignorance on how it works, but on the secrecy of each instance.'. Put simply: `A good security system is not one based on a secret trick (that one just \textit{wishes on their lucky star} adversaries never get to learn), but on the secrecy of each user's keys'.
     \item \textbf{Coercion Resistance}: It's the main point: to render attempts of using violence or threats thereof on custodians to compel them to give up their stashes (or any private information whatsoever). Not only that, system has to be such that an attacker cannot even threaten the integrity of the user's stash to try to obtain something else.
   \end{enumerate}
 \end{question}
@@ -64,15 +64,15 @@ Great Wall is, the first to combine 4 crucial information security properties, n
  The importance of that specific combination of properties becomes clear once we analyse the shortcomings of systems lacking or compromising each one individually, as described below:
  \begin{enumerate}
   \item \textbf{Individual, Non-Obscure, Coercion Resistant, but not KBA}: This setup describes solutions that are intensive in physical elements, such as \href{https://iancoleman.io/shamir39/}{sharding your key} and distributing shards accross multiple addresses as well as the elements for physical security of each such address, like physical vaults, surveilance, home defense, alarm, geographic separation, etc. The shortcoming of that approach is the \textbf{astronomically high costs} of setup, maintenance and update. Put simply: `Bitcoin is reduced to a glorified gold'.
-  \item \textbf{KBA, Non-Obscure, Coercion Resistant, but not Individual}: This setup describes solutions in which owner depends on services of shared custody. As explained above, that completely negates the foundational premise of Bitcoin. Companies offering said services, are themselves liable to state regulations, judicial subpoenas, and are themselves, additional points of failure. Put simply: `Bitcoin is reduced to a glorified fiat currency';
-  \item \textbf{KBA, Individual, Coercion Resistant, but based on Obscurity}: This setup consist of relying on a critical secret trick that only works in so far adversary is ignorant about it. Many \href{https://rewindbitcoin.com/}{modern `solutions'} unknowingly have that shortcoming, which fundamentally violates the most widely accepted paradim in protocol design: \href{https://en.wikipedia.org/wiki/Kerckhoffs's_principle}{Kerckhoffs' principle} --- more about that in questions about obscurity. Put simply, it is wishing on your lucky start that the bad guys willing to plan and execute an elaborate and risky endeavor as a kidnapping will just never hear about how your James Bond play works. Don't bet yours Sats (or your life) on that!
-  \item \textbf{KBA, Individual, Non-Obscure, but Coercion Vulnerable}: This is, basically, vanilla self-custody. Having your keys, but not doing anything in particular to defend them against wrench attacks. \href{https://duckduckgo.com/?q=\%22we+are+still+early\%22+bitcoin&t=brave&ia=web}{``We are still early''}, the saying goes. For purposes of going by as a needle in a haystack to avoid being attacked, not so much anymore, and, as crypto continues to grow in adoption and value, it will only get worse! So don't wait until problem reaches you (it's an \textit{when}, not an \textit{if}) to solve it!
+  \item \textbf{KBA, Non-Obscure, Coercion Resistant, but not Individual}: This setup describes solutions in which owner depends on services of shared or delegated custody. As explained above, that completely negates the foundational premise of Bitcoin. Companies offering said services, are themselves liable to state regulations, judicial subpoenas, and are themselves, additional points of failure. Put simply: `Bitcoin is reduced to a glorified fiat currency';
+  \item \textbf{KBA, Individual, Coercion Resistant, but based on Obscurity}: This setup consist of relying on a critical secret trick that only works in so far adversary is ignorant about it. Many \href{https://rewindbitcoin.com/}{modern `solutions'} unknowingly have that shortcoming, which fundamentally violates the most widely accepted paradim in protocol design: \href{\kprinciple}{Kerckhoffs' principle} --- more about that in questions about obscurity. Put simply, it is wishing on your lucky start that the bad guys willing to plan and execute an elaborate and risky endeavor as a kidnapping will just never hear about how your James Bond play works. Don't bet yours Sats (or your life) on that!
+  \item \textbf{KBA, Individual, Non-Obscure, but Coercion Vulnerable}: This is, basically, vanilla self-custody. Having your keys, but not doing anything in particular to defend them against wrench attacks. \href{https://duckduckgo.com/?q=\%22we+are+still+early\%22+bitcoin&t=brave&ia=web}{``We are still early''}, the saying goes. For purposes of going by as a needle in a haystack to avoid being attacked, not so much anymore, and, as crypto continues to grow in adoption and value, it will only get worse! So don't wait until problem reaches you (it's a \textit{when}, not an \textit{if}) to solve it!
  \end{enumerate}
 Combining the aforementioned 4 properties literally means that ``1) it's all in your head; 2) in nobody else's; 3) attackers are aware of that; and 4) they are unable to coerce you into giving up said knowledge.'' By logic, this can only be possible if said knowledge is \href{https://en.wikipedia.org/wiki/Tacit_knowledge}{tacit}. Hence the jargon \textbf{T}acit \textbf{K}nowledge-\textbf{B}ased \textbf{A}uthentication \textbf{TKBA} to the innovation.
 \end{question}
 
 \begin{question}{What exactly does client pay for?}
-Client does \textbf{not} pay for \sout{custody} in any definition. In one sentence: if clients does setup today and company disapears tomorrow, clients still has as much access to their stash as right after setup. The catch is that running the entire process offline, though possible, is typically very inconvenient. For a small price, user can render their UX much more \textbf{convenient}.
+Client does \textbf{not} pay for \sout{custody} in any definition. In one sentence: if clients does setup today and company disapears tomorrow, clients still has as much access to their stash as right after setup. The catch is that running the entire process offline, though possible, is typically very inconvenient. For a small price, user can render their UX much more \textbf{convenient}. Let's see how that works in the sessions below.
 \end{question}
 
 \section{Technical Questions}
@@ -81,10 +81,10 @@ Client does \textbf{not} pay for \sout{custody} in any definition. In one senten
 Likewise BIP39, it's just a key derivation scheme that can run 100\% offline in any device. The simple way to describe the Great Wall protocol is to say:
 \begin{enumerate}
  \item You input an initial seed equivalent in strength to 6 BIP39 words into an hours-(, days-, or even weeks-) long hash;
- \item Hash specifies a seed to your `private game', which admits a near-infinity of possible `gameplays';
+ \item This hous-(, days-, or even weeks-) long hash yields a seed to your `private game', which admits a near-infinity of possible `gameplays';
  \item Bits of your `private gameplay' of your `private game' are added to entropy of master secret;
 \end{enumerate}
-The catch is that the knowledge of `gameplay' is easy to memorize but impossible to put into words. Because of that, you, alive and well, are strictly throughout the entire process, which can be set up to take hours, days, or even weeks. As a result, stealing your stash becomes at least as difficult as conducting a kidnapping that takes as long.
+The catch is that the knowledge of `gameplay' is easy to memorize but impossible to put into words. Because of that, you, alive and well, are strictly necessary throughout the entire process, which can be set up to take hours, days, or even weeks. As a result, stealing your stash becomes at least as difficult as conducting a kidnapping that takes as long.
 \end{question}
 
 \begin{question}{What does such \textit{TKBA game} consist of?}
@@ -92,7 +92,7 @@ The catch is that the knowledge of `gameplay' is easy to memorize but impossible
 \begin{enumerate}
  \item \textbf{Deterministic:} a fixed math formula with a given input will always yield the same fractal no matter the platform;
  \item \textbf{Quantifiable:} a simple straightforward calculation ensures the given objects have exact the cryptographic strength needed;
- \item \textbf{Familiarity and Ease:} everybody is familiar to the UX of zooming in Google from planetary scale into specific addresses. With \href{\gmaps}{~200 M distinct locations in Google maps}, selecting one single location is roughly equivalent to 27 bits, which is north of 2 BIP29 words (11 bits each). That puts memorizing the equivalent strength to a conventional 12-words seedphrase at equivalent to locating 6 addresses: \textbf{easy!};
+ \item \textbf{Familiarity and Ease:} everybody is familiar to the UX of zooming in Google from planetary scale into specific addresses. With \href{\gmaps}{~200 M distinct locations in Google maps}, selecting one single location is roughly equivalent to 27 bits, which is north of 2 BIP29 words (11 bits each). That puts memorizing the equivalent strength to a conventional 12-words seedphrase at equivalent to locating 6 addresses --- \textbf{easy};
  \item \textbf{Tacitness:} Unlike the UX of zooming in to location on planet earth, zooming in into a location in a private fractal, involves using reference points that are all:
  \begin{enumerate}
   \item private --- hence not previously known by the adversary;
@@ -102,18 +102,17 @@ The catch is that the knowledge of `gameplay' is easy to memorize but impossible
  \end{enumerate}
  \item \textbf{Culturally Neutral:} Also worh mentioning process is not linguistic, or linked to something that might be vary in cultural acceptability accross time and geography. It's purely mathematical, so no cultural barriers to adoption;
 \end{enumerate}
-
-
+Efficacy of method has been anecdotally validated with flying colors.
 \end{question}
 
 \begin{question}{How can user decide the duration of their time barrier? Wouldn't an adversary equiped with a setup 1000-X more powerful than your be able to perform your derivation in 1000-th of the time?}
 Three important concepts are the basis for it:
 \begin{enumerate}
  \item \textbf{sequences of tasks that cannot be computed in parallel}: Many types of sequential computation have the characteristic adding more machines, don't speed up the process. It's similar to how having 1000 marathonists don't allow you to run a marathon in $1/1000$ of the time, only in the speed of the fastest runner.
- \item \textbf{frequency scaling barrier}: continuing the analogy between compuation performance of a sequential task and running a race, the `speed of a runner' is equivalent to the \textit{frequency} of a CPU. For highly technical reasons, since mid 2000's we have reached a \href{https://en.wikipedia.org/wiki/Frequency_scaling}{ceiling on frequency scaling} Said ceiling is very directly consequence of physice --- the speed of light, limiting how fast a signal can travel, or size of atoms limiting how small a transistor can be, hence,cannot be expected to change.
+ \item \textbf{frequency scaling barrier}: continuing the analogy between compuation performance of a sequential task and running a race, the `speed of a runner' is equivalent to the \textit{frequency} of a CPU. For highly technical reasons, since mid 2000's we have reached a \href{https://en.wikipedia.org/wiki/Frequency_scaling}{ceiling on frequency scaling}. Said ceiling is very directly consequence of physics --- the speed of light, limiting how fast a signal can travel, or size of atoms limiting how small a transistor can be, hence,cannot be expected to change.
  \item \textbf{memory intensivity}: continuing the analogy even further, there are known techniques to minimize the material advantage a top performing CPU has over an ordinary one, or in the analogy pro runner has over a casual walker. To have the sequential task at hand be intensive in memory access, would be equivalent to equip both pro runner and casual walker alike with a \href{https://duckduckgo.com/?q=running+parachute&iar=images&t=brave}{running parachute}: the top performer would still outperform the casual one, but way less efficiently.
 \end{enumerate}
-The combination of those three paradigms are widely used in modern technology. They are at the core of design of \textbf{offline} key derivation functions like that employed in \href{\bipref}{BIP39}, \href{\mhh}{memory-intensive hashes}, and \href{\tlp}{time-lock puzzles}.
+The combination of those three paradigms are widely used in modern technology. They are at the core of design of \textbf{offline} key derivation functions like that employed in \href{\bipref}{BIP39}, \href{\mhh}{memory-intensive hashes}, and \href{\tlp}{time-lock puzzles}. In a nutshell: a memory-intensive sequence with enough iterations will impose a time as long as desired to \textbf{any} adversary, at the cost of an UX \textbf{only marginally (a few times)} as long.
 \end{question}
 
 \begin{question}{Wouldn't it be simpler to have the time barrier consist of blockhain block counting?}
@@ -121,20 +120,30 @@ In that case, there would be a necessary piece of information published on the b
 \end{question}
 
 \begin{question}{There are current \href{https://rewindbitcoin.com/}{solutions also based on imposing a time-barrier}. Why are they inadequate?}
-The catch is `What exactly happens / becomes possible to be done after the time barrier?'. If the answer is: `transaction from a protected address can be redirected to emergency address before $n$ blocks enlapse', this means the system only works in so far adversary does not know how it works, namely it's an obscure system. The problem with obscurity is that not only, knowledge diffusion undermines a security system, but also it makes it backfire. In that example, an educated attacker has incentive to assassinate wrench attack victim to prevent them from performing transaction redirection. Reliance on obscurity, therefore, introduced the incentive for an educated attacker to worsen their attack --- and obviously, there are no reliable ways to prevent wrench attackers form educating themelves (\href{kprinciple}{Kerckhoffs' principle}).
+The catch is `What exactly happens / becomes possible to be done after the time barrier?'. If the answer is: `transaction from a protected address can be redirected to emergency address before $n$ blocks enlapse', this means the system only works in so far adversary does not know how it works, namely it's an obscure system. The problem with obscurity is that not only, knowledge diffusion undermines a security system, but also it makes it backfire. In that example, an educated attacker has incentive to assassinate wrench attack victim to prevent them from performing transaction redirection. Reliance on obscurity, therefore, introduced the incentive for an educated attacker to intensify / aggravate / worsen their attack --- and obviously, there are no reliable ways to prevent wrench attackers form educating themelves (\href{\kprinciple}{Kerckhoffs' principle}).
+
+In our case, answer is: ``The time barrier is a necessary condition for loading the interface for user deploying their otherwise tacit knowledge.''. This rather technical statement translates more simply to: ``Time barrier becomes itself, duration in which user alive and well, is strictly necessary to access its stash''. That fact makes wrench attack more difficult to carry out.
 \end{question}
 
 \begin{question}{How can user buy improvement in convenience without compromising security properties or true self-custody? If I pay for somebody else to derive my keys, then I no longer have individual custody of them, right?}
-User doesn't pay to derive the seed to the private game. Instead, he pays to derive a one-time usage key to decrypt locally stored game seed. The outsourced material is insufficient to 
-...
-As a consequence anonymity of user becomes critically important, which consolidates first-mover lock-in (anonymity is maximized by joining marketplace with largest pool of users).
+User doesn't pay to derive the seed to the private game. Instead, he pays to derive a one-time usage key to decrypt locally stored game seed. The outsourced material is insufficient to deriving the private game.
+
+As a consequence of that design, anonymity of user becomes critically important: if wrench attacker Wednesday discovers when client Charlie pays for and receives result of key derivation, she, therefore knows his window of vulnerability to wrench attack. Wanting to maximize his anonimity, Charlie will want to join the largest possible pool of other users, (similarly to first-mover consolidation of a social network).
 \end{question}
 
 \begin{question}{Wouldn't a frustrated / distrusting / uneducated wrench-attacker, then brutalize their victims? How to solve that?}
-Likewise \href{\privsecplaque}{private security companies warning signs}, users will want to acquire, use and wear branded merchandise to dissuade attackers or would-be attackers. Likewise warning signs, branded merch will educate attackers (and would-be attackers) that victim (and would-be victims) really are well protected.
+Likewise \href{\privsecplaque}{private security companies warning signs}, users will want to acquire, use and wear branded merchandise to dissuade attackers or would-be attackers. Likewise warning signs, branded merch will educate attackers (and would-be attackers) that victim (and would-be victims) really are well protected. 
+
+Influenced by the myth of Satoshi Nakamoto, our community got overly attached to the idea of security through obscurity. We, however, are way passed the point in which Bitcoiners can simply go by needles in a haystack, and as adoption and value of Bitcoin continue to grow, effectiveness of obscurity will only rapidly drop to zero. We offer the solution: \textbf{security through anti-obscurity}.
 \end{question}
 
 \begin{question}{It seems like there is an obvious single point of failure in user forgetting either inputs to their setup. How to fix it?}
+Let's break down this objection into 3 responses:
+\begin{enumerate}
+ \item \textbf{There is plenty brain power in a typical user:} Those who were born before in the 90's or earlier will remember: knowing a handful of telephone numbers by heart was commonplace. Moreover: we also do remember a few of them even today, dacades after this brain skill fell in disuse. As few as 5 of them convey as much entropy as a 12 word BIP39 seedphrase.
+ \item \textbf{Integrated Memory Coach} similar to those in \href{https://apps.ankiweb.net/}{Anki} and \href{http://duolingo.com/}{Duolingo} makes sure user both doesn't forget critical knowledge and doesn't overdo memory exercise, causing usage fatigue. The process of regularly replaying private game to keep memory of private gameplay fresh is great news because it translates to \textbf{recurrent payment}, and \textbf{habit building}.
+ \item \textbf{Inheritance:} a stash relevant enough to be defended against wrench attack, is also relevant enough to have its automatic transmission to heirs secured by a protocol setup. Details of that fall beyond the scope of this document, but it suffices to say that it can be implemented as an additional feature seamlessly synergized with the main one of coercion resistance. Moreover, the habit-building effect of integrated memory coach will propagate from heir to testator to heir in a given family.
+\end{enumerate}
 \end{question}
 
 \begin{question}{Is the expected UX, by itself, not too tiresome?}
@@ -142,6 +151,23 @@ We are talking about a half minute game-like UX, automatically notified and repl
 \end{question}
 
 \begin{question}{What is so bad about obscurity, really? How to avoid it? Can you provide examples?}
+Obscurity is the characteristic of a system relying on / necessitating the ignorance of its adversaries about it, in order to function. By logic and common sense, one cannot seriously \textbf{publish} a new system and expect bad guys will never learn about it.
+
+Reliance on obscurity, is however even worse than just the mere false sense of security. Below are a few examples in which obscurity actually backfires:
+\begin{description}
+ \item[plausible denial:] Legit user, say, Daniel denies to wrench attacker, say, Wednesday having what she seeks, or claims having much less --- which is called to use a \textit{decoy wallet}.
+ 
+ If Wednesday is aware of how plausible denial techniques and decoy wallets work she may keep brutalizing Daniel not only until but also beyond the point of he giving up everything he has, motivated by belief he is in denial. In other words, obscurity gives incentive to indefinite brutality.
+ 
+ On the other hand, an adversary to our anti-obscure system is made readily aware that harming victim leads to no material gain at all.
+ 
+ \item[cancellable transaction:] Legit user, say, Albert, keeps stash in an programmable UTXO that: A) ordinarily takes a large quantity of blocks to be emptied; and B) a transaction moving Bitcoin away from it can, before maturity block is reached, be redirected to obscure address or aborted.
+ 
+ As explained above, an educated wrench attacker would have the material incentive to assassinate Albert as to prevent him from aborting theft transation.
+ 
+ Once more, the adversary to our anti-obscure system needs their victim alive and well during the entire process which, if longer than they are able to abduct victim for, will be pointless anyway, so all incentives are in the direction of desisting the attack.
+\end{description}
+
 \end{question}
 
 \begin{question}{Can the system be used for other currencies?}
@@ -149,12 +175,6 @@ Protocol is merely a key derivation scheme. Resulting secret can be converted in
 \end{question}
 
 \section{Business Model}
-
-\begin{question}{How this UX improvement purchase happen?}
-\end{question}
-
-\begin{question}{How will clients feel about that?}
-\end{question}
 
 \begin{question}{What exactly is the business model?}
 Company is a marketplace between anonymous clients of key derivation and providers of key derivation. Clients want to stay anonymous in order not to reveal their window of vulnerability (namely, the span of time in which their time-locked virtual vault is open or close to be opened).
@@ -165,18 +185,31 @@ Another venue is to sell branded merchandise. Likewise \href{\privsecplaque}{war
 Absolutely! Users want to maximize their anonymity. The more anonymous they are, on buying their key derivation, the less likely it is they are wrench-attacked right upon receiving their keys (which would anull their time barrier). By adhering to first mover, new users make sure they blend in the largest possible pool of other users, therefore maximizing their anonymity. This is similar to having the tendency to choose the largest social network.
 \end{question}
 
+\begin{question}{How this UX improvement purchase happen?}
+Best way to implement it, in terms of maximizing security properties is:
+Lightning Network wallet connects through Tor with company's Linghtning Network node, submits derivation request through Lighning Network connection 
+
+Less sophisticated and more conventional subscription, connection and payments methods may be made available to less advanced users for usability / securty tradeoff, without negating the premise that derivation request and payment still being anonymous. Example: user may sign up with email and conventionally pay with credit card and trust the company not to leak their secrecy.
+\end{question}
+
+\begin{question}{How will clients feel about that?}
+Extremely positively: unlike fremium games that charge for adfree experience, the gain in UX quality through is \textbf{not} product of an artificially imposed arbitrary inconvenience, that user is bored / annoyed into paying to get rid of. Necessity to recurrently perform a hardware-intensive hours-, days-, or even weeks-long computation arises as a direct logical consequence of TKBA. It is, by design, totally possible to do that all by oneself. But, for a small price (operational cost plus markup), one can make the experience not be burdensome by outsourcing it to agents with more economy of scale. Also, it's critically important that such outsourcing happens anonymously. Thus, a first-mover consolidating anonymous marketplace for that service becomes a natural solution. Decision to adhere to that marketplace as client, therefore, feels fair and natural.
+\end{question}
+
 \begin{question}{What are the customer acquisition strategies?}
+The main one is \textbf{affiliate marketing}. Approach has several precedents in many similar products and services in the same community.
 \end{question}
 
 \begin{question}{Are payments recurrent?}
+Yes. User needs to regularly replay their `private game' to keep memory of their `private gameplay' fresh. That is ensure by the aforementioned integrated memory coach, which translates to user regularly paying for derivation of one-time usage keys.
 \end{question}
 
 \begin{question}{Are there ways to minimize user churn?}
+Yes. Ease to use, gamefication of UX, habit consolidation of recurrent playing of ``private game'', given by necessity to consolidate memory, and ensured by integrated memory assistant. On top of that, there is the fact of the importance itself of the service: security against physical violence and theft of large amounts --- a good benchmark for user churn would be that of conventional private security companies. Finally, habit creation from heirs and testators in a given family tend to propagate by example and peer presure. Example: children reinforce mom and dad usage of the system so to protect their inheritance against wrench attacks.
 \end{question}
 
-\begin{question}{Is there synergy among different revenue streams?}
+\begin{question}{Where can I learn precise details of valuation, and budget projection for the first years?}
+In our \href{https://tr.ee/gwxs}{executive summary}.
 \end{question}
-
-
 
 \end{document}
