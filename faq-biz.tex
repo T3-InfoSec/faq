@@ -1,0 +1,129 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[normalem]{ulem}
+
+%=== STYLE SETTINGS ===%
+\setstretch{1.2}
+\titleformat{\section}
+  {\large\bfseries\color{blue!70!black}}
+  {}{0em}{}
+\titlespacing*{\section}{0pt}{1em}{0.3em}
+
+% Define Q and A environments
+\newenvironment{question}[1]{%
+  \vspace{0.8em}\noindent\textbf{Q: #1}\par
+  \vspace{0.2em}\noindent\begin{itshape}A:\end{itshape}~%
+}{\vspace{0.8em}}
+
+% Optional: hyperlink color setup
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue!70!black,
+  linkcolor=blue!70!black
+}
+
+\newcommand{\obsegg}{https://www.linkedin.com/posts/lugano-plan-b_luganoplanb-bitcoin-activity-7167881837728493568-LEZk/}
+\newcommand{\theproblem}{https://x.com/search?q=jameson\%20lopp\%20wrench\%20attack&src=typed_query&f=live}
+\newcommand{\nocurrentsolution}{https://www.youtube.com/watch?v=MsfR6ZIkzPs&t=2734s}
+\newcommand{\kba}{https://en.wikipedia.org/wiki/Knowledge-based_authentication}
+\newcommand{\kprinciple}{https://en.wikipedia.org/wiki/Kerckhoffs's_principle}
+\newcommand{\privsecplaque}{https://duckduckgo.com/?q=prosegur+verisure+\%22warning+sign\%22+facade\&iar=images\&t=brave\&iaf=type\%3Aphoto}
+\newcommand{\mhh}{https://security.stackexchange.com/questions/237498/how-does-memory-hard-hashing-passwords-protect-against-brute-force-attacks\#237511}
+\newcommand{\bipref}{https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki}
+\newcommand{\tlp}{https://en.wikipedia.org/wiki/Time-lock_puzzle}
+\newcommand{\gmaps}{https://blog.google/products/maps/15-years-of-mapping-the-world-makes-search-better/}
+\begin{document}
+
+\begin{center}
+  {\LARGE \textbf{Great Wall FAQ (v3)}}\\[0.3em]
+  \textit{Last updated: \today}
+\end{center}
+
+\section{For Clients (The Problem \& Solution)}
+
+\begin{question}{What is the ``\$5 wrench attack'' and why isn't my hardware wallet safe?}
+The \$5 wrench attack is when an attacker threatens you with physical violence to force you to unlock your wallet. Hardware wallets (Ledger, Trezor) protect against remote hackers, not physical coercion: if you are present, you can be forced to unlock. They are, therefore, completely vulnerable to a wrench attack.
+\end{question}
+
+\begin{question}{How does Great Wall solve this? What is TKBA?}
+By making a physical attack futile. Our \textbf{TKBA (Tacit Knowledge-Based Authentication)} protocol simultaneously delivers four properties that, until now, were mutually exclusive:
+\begin{enumerate}
+  \item \textbf{Deviceless (Knowledge-Based):} Your mind is your wallet. Access is tied only to tacit knowledge—not a device, seed phrase, or object.
+  \item \textbf{Individual Custody:} We uphold ``Not your keys, not your coins.'' You are always your own bank.
+  \item \textbf{Coercion Resistance:} Access requires time (e.g., 2–168 hours of computation) \emph{and} tacit knowledge (your private gameplay). An attacker has a deficit of time; forced access is impractical.
+  \item \textbf{Anti-Obscurity (Anti-Fragile):} Security increases as attackers learn about it; this knowledge becomes the deterrent.
+\end{enumerate}
+\end{question}
+
+\begin{question}{What is ``Loud, Proud, and Free''? Doesn't that make me a target?}
+It's the opposite. In the old paradigm (obscurity), hiding is necessary because your setup is fragile. In the new paradigm (Anti-Obscurity), being loud is a \emph{strategic deterrent}. Our apparel and stickers act like a security company's yard sign—signaling confident protection and deterring attacks before they begin.
+\end{question}
+
+\section{For Clients (The Product \& Service)}
+
+\begin{question}{What am I actually buying with a subscription?}
+Coercion-proof peace of mind: you outsource the \emph{time} component of TKBA via our \textbf{Anonymous Computation Marketplace}. Instead of tying up your own machine for hours or days, you pay an anonymous Provider to run the recurring, memory-intensive job.
+\end{question}
+
+\begin{question}{What are the subscription tiers (Basic, Medium, Professional, Golden)?}
+Tiers map to your security level—the duration of the time-lock computation you pay for:
+\begin{itemize}
+  \item \textbf{Basic:} 2-hour delay (\$1.25/mo)
+  \item \textbf{Medium:} 24-hour delay (\$18.00/mo)
+  \item \textbf{Professional:} 48-hour delay (\$42.00/mo)
+  \item \textbf{Golden:} 168-hour (7-day) delay (\$210.00/mo)
+\end{itemize}
+A longer delay implies an attacker would need to sustain a kidnapping for that entire duration—an impractical and futile undertaking.
+\end{question}
+
+\begin{question}{Is Great Wall a custodian? Do you ever have my keys?}
+No. We are not a custodian and never hold your keys. TKBA is a key derivation scheme (like \href{https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki}{BIP39}); we provide the computation marketplace. Only you possess the tacit knowledge to complete access.
+\end{question}
+
+\begin{question}{What if I forget my tacit knowledge?}
+An integrated memory coach (think Duolingo) helps you practice your private gameplay just enough to retain it without fatigue, creating a healthy habit—and a predictable cadence for your service.
+\end{question}
+
+\begin{question}{What if the Great Wall company disappears tomorrow?}
+You lose no access. TKBA can run 100\% offline on any device. You would only lose convenience—you'd run the hours-long computation yourself.
+\end{question}
+
+\section{For Investors (The Business Model \& Growth)}
+
+\begin{question}{What is the Anonymous Computation Marketplace?}
+It's a two-sided marketplace connecting:\\
+\textbf{Clients:} Users who need anonymity and outsource recurring, memory-intensive computation; and\\
+\textbf{Providers:} PC owners (gamers, developers, ex-miners) who monetize idle compute by running those jobs. We take a \textbf{28\%} platform fee (commission).
+\end{question}
+
+\begin{question}{What is the Provider-Driven Growth Engine?}
+Providers are our capital-efficient sales force. To head start the network, we offer a \textbf{20\% lifetime referral commission} on subscription revenue from any client a Provider recruits—\emph{limited to before we reach 20,000 paying customers}.
+\end{question}
+
+\begin{question}{What are your unit economics (LTV:CAC)?}
+Projected \textbf{\~37:1 LTV:CAC}. CAC is $\sim\$21$, driven by provider referrals functioning as success-based COGS rather than fixed marketing expense.
+\end{question}
+
+\begin{question}{What is your current traction?}
+Pre-launch, raising a \textbf{\$600K seed} to achieve the following forward-looking milestones:
+\begin{itemize}
+  \item MVP Ready: November 30, 2025
+  \item First 10 Beta Clients: December 10, 2025
+  \item End of Beta (50 Clients): February 2026
+  \item Scale to 1,000 Customers: June 2026
+\end{itemize}
+\end{question}
+
+\begin{question}{Why is Client Anonymity so important here?}
+Paying for a time-lock creates a brief \emph{window of vulnerability}. Our marketplace must match Clients and Providers anonymously so attackers cannot learn when a client's window is open. This anonymity also compounds network effects—as users seek to blend into the largest pool.
+\end{question}
+
+\vspace{0.6em}
+For detailed economics, see our Executive Summary: \href{https://tr.ee/gwxs}{tr.ee/gwxs}.
+
+\end{document}
